@@ -1,0 +1,422 @@
+/* ==========================================================================
+   SELF-FLUIDIZING MOTHER-DAUGHTER DESLUDGING SYSTEM
+   Diagrams, 3D Showcases, Mechanisms & Telemetry Styles
+   ========================================================================== */
+
+/* Animated Fluid Flow Lines */
+@keyframes flow-sludge {
+  from {
+    stroke-dashoffset: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes flow-recirc {
+  from {
+    stroke-dashoffset: 30;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulse-signal {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+.flow-sludge-anim {
+  stroke-dasharray: 8 6;
+  animation: flow-sludge 1.5s linear infinite;
+}
+
+.flow-recirc-anim {
+  stroke-dasharray: 6 4;
+  animation: flow-recirc 1s linear infinite reverse;
+}
+
+.flow-signal-anim {
+  stroke-dasharray: 4 4;
+  animation: pulse-signal 2s ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   3D Showcase & Engineering Renders
+   -------------------------------------------------------------------------- */
+.showcase-3d-wrapper {
+  background: radial-gradient(circle at 50% 10%, #15273C 0%, #0A1422 100%);
+  border: 1px solid var(--color-navy-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.showcase-header {
+  padding: 1rem 1.5rem;
+  background-color: rgba(13, 27, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.showcase-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.showcase-title-row h3 {
+  color: #FFFFFF;
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.showcase-viewport {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  background-color: #060E18;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.showcase-viewport img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showcase-viewport:hover img {
+  transform: scale(1.015);
+}
+
+/* Floating Technical Labels on 3D Renders */
+.tech-label-pin {
+  position: absolute;
+  padding: 0.3rem 0.65rem;
+  background-color: rgba(9, 20, 34, 0.88);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--color-teal);
+  border-radius: var(--radius-xs);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #E2E8F0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.tech-label-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-teal-light);
+  box-shadow: 0 0 6px var(--color-teal-light);
+}
+
+.tech-label-dot.orange {
+  background-color: var(--color-safety-orange);
+  box-shadow: 0 0 6px var(--color-safety-orange);
+}
+
+/* Minimal Focused Caption Banner */
+.showcase-caption-box {
+  padding: 1.25rem 1.75rem;
+  background-color: rgba(13, 27, 42, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.showcase-caption-text {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.showcase-caption-text span {
+  color: var(--color-teal-light);
+}
+
+.showcase-status-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(234, 88, 12, 0.12);
+  color: var(--color-safety-orange-bright);
+  border: 1px solid rgba(234, 88, 12, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Progressive Cavity Pump Animated Canvas
+   -------------------------------------------------------------------------- */
+.pc-canvas-container {
+  width: 100%;
+  height: 280px;
+  position: relative;
+  background: #07101C;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: 1.25rem;
+  border: 1px solid var(--color-navy-border);
+}
+
+#pc-pump-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.canvas-overlay-controls {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.canvas-btn {
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: var(--radius-xs);
+  background-color: rgba(15, 23, 42, 0.85);
+  color: #CBD5E1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.canvas-btn:hover, .canvas-btn.active {
+  background-color: var(--color-teal);
+  color: #FFFFFF;
+  border-color: var(--color-teal-light);
+}
+
+/* --------------------------------------------------------------------------
+   Intelligent Pump Control Sequence Animator & Telemetry
+   -------------------------------------------------------------------------- */
+.control-sequence-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.sequence-nav-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.sequence-nav-btn {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94A3B8;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.sequence-nav-btn .step-num {
+  font-size: 0.65rem;
+  color: var(--color-teal-light);
+  text-transform: uppercase;
+}
+
+.sequence-nav-btn:hover {
+  background-color: rgba(13, 148, 136, 0.15);
+  border-color: rgba(13, 148, 136, 0.35);
+  color: #FFFFFF;
+}
+
+.sequence-nav-btn.active {
+  background-color: rgba(13, 148, 136, 0.22);
+  border-color: var(--color-teal);
+  color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(13, 148, 136, 0.25);
+}
+
+.telemetry-dashboard {
+  background-color: #07111D;
+  border: 1px solid var(--color-navy-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.telemetry-readout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.telemetry-tile {
+  background-color: rgba(15, 27, 43, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+}
+
+.telemetry-tile-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #94A3B8;
+  text-transform: uppercase;
+}
+
+.telemetry-tile-val {
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-top: 0.25rem;
+}
+
+.telemetry-bar-bg {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  margin-top: 0.4rem;
+  overflow: hidden;
+}
+
+.telemetry-bar-fill {
+  height: 100%;
+  background-color: var(--color-teal);
+  border-radius: 2px;
+  transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.sequence-status-banner {
+  padding: 0.85rem 1.15rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(13, 148, 136, 0.12);
+  border-left: 3px solid var(--color-teal);
+  font-size: 0.875rem;
+  color: #E2E8F0;
+  line-height: 1.5;
+  transition: all var(--transition-normal);
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Hotspot Points on Hero Visual
+   -------------------------------------------------------------------------- */
+.image-hotspot-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.image-hotspot-point {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--color-safety-orange);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.35);
+  transition: all var(--transition-fast);
+  z-index: 10;
+  border: 2px solid #FFFFFF;
+}
+
+.image-hotspot-point:hover {
+  transform: scale(1.2);
+  background-color: #FFFFFF;
+  color: var(--color-safety-orange);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.image-hotspot-point::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-safety-orange-bright);
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.9; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* Schematic SVG styling */
+.svg-schematic {
+  width: 100%;
+  height: auto;
+  min-height: 380px;
+  max-height: 520px;
+  user-select: none;
+}
+
+.schematic-node {
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.schematic-node:hover rect,
+.schematic-node.selected rect {
+  stroke-width: 3;
+  stroke: var(--color-teal-light);
+  filter: drop-shadow(0 0 8px rgba(20, 184, 166, 0.4));
+}
+
+@media (max-width: 900px) {
+  .control-sequence-grid {
+    grid-template-columns: 1fr;
+  }
+}

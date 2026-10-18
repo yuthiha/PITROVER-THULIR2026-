@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self-Fluidizing Mother-Daughter Desludging System | 3D Engineering Showcase</title>
+  
+  <!-- SEO & Engineering Metadata -->
+  <meta name="description" content="Visual engineering showcase of the Self-Fluidizing Mother-Daughter Desludging System. Featuring progressive cavity pumping, self-fluidizing intake, and intelligent mechatronic control for unsewered terrain." />
+  <meta name="keywords" content="sanitation engineering, progressive cavity pump, mother daughter system, self-fluidizing intake, intelligent pump control, hackathon engineering" />
+  <meta name="author" content="Student Sanitation Engineering Innovation Team" />
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%230D1B2A'/><path d='M8 20l4-8 4 8' stroke='%230D9488' stroke-width='2.5' fill='none'/><circle cx='22' cy='14' r='4' fill='%23EA580C'/><path d='M16 8v16' stroke='%23FFFFFF' stroke-width='1.5' stroke-dasharray='2 2'/></svg>" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/diagrams.css" />
+</head>
+<body class="tech-grid-bg">
+
+  <!-- ========================================================================
+       SITE HEADER & NAVIGATION
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-link" id="brand-logo-link">
+        <div class="brand-logo-icon">
+          <!-- Distinctive Logo SVG: Connected Mobile Units with Droplet & Flow -->
+          <svg viewBox="0 0 48 48" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="10" fill="#091422" stroke="#1E3A5F" stroke-width="1.5"/>
+            <!-- Mother Unit base (left) -->
+            <rect x="6" y="24" width="14" height="12" rx="2" fill="#1E293B" stroke="#0D9488" stroke-width="1.5"/>
+            <circle cx="9" cy="37" r="2.5" fill="#0D9488"/>
+            <circle cx="17" cy="37" r="2.5" fill="#0D9488"/>
+            <!-- Daughter Unit base (right) -->
+            <rect x="29" y="27" width="12" height="9" rx="2" fill="#1E293B" stroke="#EA580C" stroke-width="1.5"/>
+            <circle cx="32" cy="37" r="2" fill="#EA580C"/>
+            <circle cx="38" cy="37" r="2" fill="#EA580C"/>
+            <!-- Fluidic transfer link / droplet curve -->
+            <path d="M20 28 C 24 20, 26 20, 29 29" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" fill="none" stroke-dasharray="3 2"/>
+            <!-- Central sanitation droplet -->
+            <path d="M24 10 C 21 15, 20 17, 20 19 C 20 21.2 21.8 23 24 23 C 26.2 23 28 21.2 28 19 C 28 17, 27 15, 24 10 Z" fill="#EA580C" fill-opacity="0.9"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">Mother-Daughter Desludging</span>
+          <span class="brand-sub">Self-Fluidizing Sanitation System</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <ul class="nav-menu">
+        <li><a href="#hero" class="nav-link">Overview</a></li>
+        <li><a href="#problem" class="nav-link">The Problem</a></li>
+        <li><a href="#system-overview" class="nav-link">Mother-Daughter 3D</a></li>
+        <li><a href="#pump-technology" class="nav-link" style="color: var(--color-teal-light); font-weight: 700;">Pump Technology</a></li>
+        <li><a href="#innovations" class="nav-link">Innovations</a></li>
+        <li><a href="#architecture" class="nav-link">System Flow</a></li>
+        <li><a href="#specifications" class="nav-link">Specs</a></li>
+        <li><a href="#safety" class="nav-link">Safety</a></li>
+        <li><a href="#workflow" class="nav-link">Workflow</a></li>
+        <li><a href="#economics" class="nav-link">Viability</a></li>
+        <li><a href="#team-members" class="nav-link" style="color: #38BDF8;">Team</a></li>
+        <li><a href="#mentors" class="nav-link" style="color: #FB923C;">Mentors</a></li>
+      </ul>
+
+      <!-- Action & Concept Status Pill -->
+      <div class="nav-actions">
+        <div class="nav-concept-pill" title="Concept Stage: Pre-Prototype Design">
+          <span class="nav-concept-dot"></span>
+          <span>Proposed Concept</span>
+        </div>
+        <a href="#pump-technology" class="btn btn-primary btn-sm" id="nav-explore-btn">3D Mechanics</a>
+        <button class="nav-toggle-btn" aria-label="Toggle Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <a href="#hero" class="nav-link">Overview</a>
+    <a href="#problem" class="nav-link">The Problem</a>
+    <a href="#system-overview" class="nav-link">Mother-Daughter System 3D</a>
+    <a href="#pump-technology" class="nav-link">Pump Technology (Progressive Cavity)</a>
+    <a href="#innovations" class="nav-link">Core Innovations (Intake & Control)</a>
+    <a href="#architecture" class="nav-link">System Architecture Schematic</a>
+    <a href="#specifications" class="nav-link">Engineering Specifications</a>
+    <a href="#safety" class="nav-link">Safety & Control Logic</a>
+    <a href="#workflow" class="nav-link">Operating Workflow</a>
+    <a href="#economics" class="nav-link">Business Viability Calculator</a>
+    <a href="#team-members" class="nav-link">Team Members</a>
+    <a href="#mentors" class="nav-link">Mentors</a>
+    <div style="margin-top: 1.5rem;">
+      <a href="#pump-technology" class="btn btn-primary" style="width: 100%;">View 3D Mechanics</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ========================================================================
+         SECTION 1: HERO SECTION
+         ======================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-tagline">“Reaching Every Pit. Protecting Every Worker.”</div>
+          <h1 class="hero-title">Self-Fluidizing Mother-Daughter Desludging System</h1>
+          <p class="hero-subtitle">
+            A modular, remotely operated sanitation solution designed for septic tanks in hilly terrain, narrow lanes, and hard-to-reach communities.
+          </p>
+          <p class="hero-desc">
+            Combining a mobile mother unit, a compact four-wheel daughter unit, self-fluidizing sludge intake, and intelligent pump control to improve access to safer mechanized desludging.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#system-overview" class="btn btn-primary" id="hero-btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+              Explore 3D Architecture
+            </a>
+            <a href="#pump-technology" class="btn btn-secondary" id="hero-btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              View Progressive Cavity Pump
+            </a>
+          </div>
+
+          <div class="hero-indicators">
+            <div class="hero-indicator-item">
+              <div class="hero-indicator-icon">01</div>
+              <span>Remote-Operated Daughter Unit</span>
+            </div>
+            <div class="hero-indicator-item">
+              <div class="hero-indicator-icon">02</div>
+              <span>Self-Fluidizing Intake</span>
+            </div>
+            <div class="hero-indicator-item">
+              <div class="hero-indicator-icon">03</div>
+              <span>Closed Sludge Transfer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Card with Interactive Hotspots -->
+        <div class="hero-visual-card">
+          <div class="hero-visual-media image-hotspot-wrapper">
+            <img src="assets/hero-system-illustration.jpg" alt="Engineering 3D visualization showing daughter unit at septic tank, tripod probe station, and hose connecting to mother truck" loading="eager" />
+            
+            <!-- Hotspots -->
+            <button class="image-hotspot-point" style="top: 52%; left: 42%;" data-hotspot="1" title="Daughter Unit">1</button>
+            <button class="image-hotspot-point" style="top: 45%; left: 23%;" data-hotspot="2" title="Tripod Station">2</button>
+            <button class="image-hotspot-point" style="top: 72%; left: 60%;" data-hotspot="3" title="Lay-Flat Transfer Hose">3</button>
+            <button class="image-hotspot-point" style="top: 20%; left: 80%;" data-hotspot="4" title="Mother Unit">4</button>
+          </div>
+
+          <div class="hero-visual-banner">
+            <div class="hero-visual-status">
+              <span class="nav-concept-dot"></span>
+              <span>CONCEPT UNDER DEVELOPMENT • INTERACTIVE 3D SCHEMATIC</span>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.72rem;">Click hotspots 1–4 to inspect</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Context Ribbon -->
+    <div style="background-color: var(--color-navy-surface); border-bottom: 1px solid var(--color-navy-border); padding: 0.85rem 0; color: #94A3B8; font-size: 0.8125rem;">
+      <div class="container flex items-center justify-between flex-wrap gap-4">
+        <div><strong style="color: #FFFFFF;">Core Architecture:</strong> Dual-Platform Positive-Displacement Desludging</div>
+        <div><strong style="color: #FFFFFF;">Terrain Target:</strong> Narrow alleys (1.2 m), terraced hillsides, rural settlements</div>
+        <div><strong style="color: var(--color-safety-orange-bright);">Status:</strong> Proposed Innovation Concept (Pre-Prototype)</div>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         SECTION 2: THE PROBLEM ("The Sanitation Access Challenge")
+         ======================================================================== -->
+    <section class="section" id="problem">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag orange">Field Realities</span>
+          <h2 class="section-title">The Sanitation Access Challenge</h2>
+          <p class="section-subtitle">
+            Why conventional desludging equipment fails in high-density, steep, and unsewered settlements.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-4 gap-6">
+          <div class="card">
+            <div class="card-icon-wrapper icon-orange">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+            <h4>Limited Vehicle Access</h4>
+            <p class="card-desc">Heavy trucks require 3–4 m wide roads; they cannot enter 1.2 m alleys or steep mountain paths.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon-wrapper icon-teal">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <h4>Difficult Sludge Extraction</h4>
+            <p class="card-desc">Thick, viscous sludge and depth-related head loss quickly stall standard atmospheric suction systems.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon-wrapper icon-red">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            </div>
+            <h4>Unsafe Manual Emptying</h4>
+            <p class="card-desc">Inaccessible pits force hazardous manual bailing, exposing workers to lethal H₂S gas and biohazards.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon-wrapper icon-green">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h4>Environmental Contamination</h4>
+            <p class="card-desc">Untreated manual dumping directly pollutes local streams, springs, and shallow groundwater tables.</p>
+          </div>
+        </div>
+
+        <div class="problem-statement-box" style="margin-top: 2.5rem; padding: 2rem;">
+          <div class="problem-statement-quote" style="font-size: 1.35rem; margin-bottom: 0.5rem;">
+            “How can we make mechanized faecal sludge removal accessible to difficult-to-reach households while reducing worker exposure and avoiding unnecessary water consumption?”
+          </div>
+          <p style="color: #94A3B8; margin-bottom: 0; font-size: 0.9375rem;">
+            Answer: Decouple bulk roadway storage from pit-side fluid pumping using a synchronized Mother-Daughter robotic platform.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 3: MOTHER-DAUGHTER SYSTEM VISUALIZATION (Requirement 6)
+         ======================================================================== -->
+    <section class="section section-dark tech-grid-dark" id="system-overview">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag teal">Dual-Unit Architecture</span>
+          <h2 class="section-title">A Two-Unit System. One Connected Operation.</h2>
+          <p class="section-subtitle">
+            The mother vehicle acts as roadway storage and transport; the compact daughter unit brings positive-displacement pumping directly to the pit mouth.
+          </p>
+        </div>
+
+        <!-- 3D Overview Showcase Frame -->
+        <div class="showcase-3d-wrapper">
+          <div class="showcase-header">
+            <div class="showcase-title-row">
+              <span class="badge badge-target">3D SYSTEM OVERVIEW</span>
+              <h3>Mother-Daughter Connected Operation</h3>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="badge badge-estimate">Closed Pressurized Transfer</span>
+              <span class="badge badge-validate">No Vacuum Pump Used</span>
+            </div>
+          </div>
+
+          <div class="showcase-viewport">
+            <img src="assets/mother-daughter-system-3d.jpg" alt="3D engineering render of Mother-Daughter system showing utility truck, lay-flat hose, and daughter unit with progressive cavity pump" />
+            <!-- Animated Sludge Flow Overlay Path -->
+            <div class="tech-label-pin" style="top: 24%; left: 16%;">
+              <span class="tech-label-dot"></span> Mother Unit (Mobile Storage Base)
+            </div>
+            <div class="tech-label-pin" style="bottom: 25%; left: 45%;">
+              <span class="tech-label-dot orange"></span> Lay-Flat Transfer Hose (50–100 m)
+            </div>
+            <div class="tech-label-pin" style="top: 24%; right: 18%;">
+              <span class="tech-label-dot"></span> Daughter Unit (Progressive Cavity Pump)
+            </div>
+            <div class="tech-label-pin" style="bottom: 18%; right: 10%;">
+              <span class="tech-label-dot orange"></span> Tripod Station & Septic Pit
+            </div>
+          </div>
+
+          <div class="showcase-caption-box">
+            <p class="showcase-caption-text">
+              “Continuous closed-circuit transfer: <span>Positive progressive cavity pumping</span> sends sludge directly from the pit to the roadway truck.”
+            </p>
+            <div class="showcase-status-badge">
+              PROPOSED CONCEPT ARRANGEMENT • TO BE VALIDATED
+            </div>
+          </div>
+        </div>
+
+        <!-- Two Unit Technical Breakdown Cards -->
+        <div class="grid grid-cols-2 gap-6" style="margin-top: 2rem;">
+          <div class="card card-dark unit-card-mother">
+            <div class="unit-badge-pill unit-badge-mother">Mobile Storage & Transport Base</div>
+            <h3 style="color: #FFFFFF; margin-bottom: 0.5rem;"><span style="color: #38BDF8;">A.</span> Mother Unit (Roadway Utility Vehicle)</h3>
+            <ul class="unit-features-list" style="padding: 0; font-size: 0.9rem;">
+              <li class="unit-feature-item">
+                <span class="unit-feature-bullet">✓</span>
+                <div><strong>Road-Level Staging:</strong> Parks on nearest accessible roadway without risking narrow alley blockages.</div>
+              </li>
+              <li class="unit-feature-item">
+                <span class="unit-feature-bullet">✓</span>
+                <div><strong>Sealed Storage Tank:</strong> Payload-rated sludge container (2,000–4,000 L) for municipal treatment disposal.</div>
+              </li>
+              <li class="unit-feature-item">
+                <span class="unit-feature-bullet">✓</span>
+                <div><strong>Rear Transit Deck & Tilt Ramp:</strong> Transports and safely deploys the compact daughter rover.</div>
+              </li>
+              <li class="unit-feature-item">
+                <span class="unit-feature-bullet">✓</span>
+                <div><strong>Closed Top Receiving Inlet:</strong> Camlock coupling receiving sludge continuously through lay-flat hose.</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card card-dark unit-card-daughter">
+            <div class="unit-badge-pill unit-badge-daughter">Pit-Side Robotic Pumping Platform</div>
+            <h3 style="color: #FFFFFF; margin-bottom: 0.5rem;"><span style="color: #2DD4BF;">B.</span> Daughter Unit (Compact 4WD Rover)</h3>
+            <ul class="unit-features-list" style="padding: 0; font-size: 0.9rem;">
+              <li class="unit-feature-item">
+                <span class="unit-feature-bullet">✓</span>
+                <div><strong>4WD Electric Platform:</strong> Compact footprint navigating 1.2 m alleys and unpaved grades.</div>
+              </li>
+              <li class="unit-feature-item">
+                <span class="unit-feature-bullet">✓</span>
+                <div><strong>Progressive Cavity Pump:</strong> Positive-displacement rotor/stator generating constant positive discharge head.</div>
+              </li>
+              <li class="unit-feature-item">
+                <span class="unit-feature-bullet">✓</span>
+                <div><strong>Proposed 200–250 L Buffer Tank:</strong> Acts as an inline hydraulic buffer; not intended to empty whole pits alone.</div>
+              </li>
+              <li class="unit-feature-item">
+                <span class="unit-feature-bullet">✓</span>
+                <div><strong>Swappable 24V LiFePO₄ Battery & Remote Camera:</strong> Standoff operator control with pan-tilt navigation.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mode Comparison -->
+        <div style="margin-top: 2.5rem; text-align: center;">
+          <div class="mode-toggle-group">
+            <button class="mode-toggle-btn active" data-mode="direct">Direct Transfer Mode (Preferred)</button>
+            <button class="mode-toggle-btn" data-mode="carry">Carry Mode (Shuttle Batch)</button>
+          </div>
+        </div>
+
+        <div class="mode-content-pane active" id="mode-direct" style="margin-top: 1.5rem;">
+          <div class="mode-detail-card mode-detail-direct">
+            <div>
+              <span class="badge badge-direct-mode" style="margin-bottom: 0.5rem;">Primary Operation Mode</span>
+              <h4 style="color: #FFFFFF; margin-bottom: 0.5rem;">Direct Transfer Mode (Continuous Pumping)</h4>
+              <p style="color: #E2E8F0; font-size: 0.9rem; margin-bottom: 0; line-height: 1.6;">
+                The daughter unit pumps sludge continuously through a 50–100 m lay-flat hose directly into the mother truck's sealed tank. Empties full 2,000–3,000 L septic pits in a single continuous session.
+              </p>
+            </div>
+            <div class="mode-metric-direct">
+              • High volumetric throughput<br>
+              • Minimal alley traffic during job<br>
+              • 100% enclosed, pressurized transfer
+            </div>
+          </div>
+        </div>
+
+        <div class="mode-content-pane" id="mode-carry" style="margin-top: 1.5rem;">
+          <div class="mode-detail-card mode-detail-carry">
+            <div>
+              <span class="badge badge-carry-mode" style="margin-bottom: 0.5rem;">Secondary Contingency Mode</span>
+              <h4 style="color: #FFFFFF; margin-bottom: 0.5rem;">Carry Mode (Shuttle Batch Transit)</h4>
+              <p style="color: #E2E8F0; font-size: 0.9rem; margin-bottom: 0; line-height: 1.6;">
+                Used when direct hose runs are blocked by 90-degree blind masonry corners or heavy foot traffic. The daughter unit fills its 200–250 L buffer tank and shuttles small loads back to the mother truck.
+              </p>
+            </div>
+            <div class="mode-metric-carry">
+              • For severe geometry only<br>
+              • Multiple shuttle trips required<br>
+              • 200–250 L buffer capacity limit
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 4: PUMP TECHNOLOGY — DEDICATED SECTION (Requirement 3)
+         ======================================================================== -->
+    <section class="section" id="pump-technology" style="background-color: #060E18; color: #FFFFFF;">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag teal">Dedicated Pump Architecture</span>
+          <h2 class="section-title" style="color: #FFFFFF;">Pump Technology: Progressive Cavity Positive-Displacement Pump</h2>
+          <p class="section-subtitle" style="color: #94A3B8;">
+            Important correction: We are NOT using a vacuum pump. The daughter unit utilizes a progressive cavity pump engineered specifically for controlled transfer of thick, viscous sludge through a discharge hose.
+          </p>
+        </div>
+
+        <!-- 3D Cutaway Showcase -->
+        <div class="showcase-3d-wrapper" style="border-color: rgba(13, 148, 136, 0.4);">
+          <div class="showcase-header">
+            <div class="showcase-title-row">
+              <span class="badge badge-estimate">3D MECHANICAL CUTAWAY</span>
+              <h3>Progressive Cavity Positive-Displacement Pump</h3>
+            </div>
+            <span class="badge badge-validate">Proposed pump selection — performance to be validated</span>
+          </div>
+
+          <div class="showcase-viewport">
+            <img src="assets/pc-pump-cutaway-3d.jpg" alt="Realistic 3D cutaway visualization of progressive cavity positive displacement pump showing helical rotor, elastomer stator, and progressing cavities" />
+          </div>
+
+          <div class="showcase-caption-box">
+            <p class="showcase-caption-text">
+              “<span>Designed for controlled transfer of thick, viscous sludge</span> through a discharge hose.”
+            </p>
+            <div class="showcase-status-badge">
+              PROPOSED PUMP SELECTION • PERFORMANCE TO BE VALIDATED
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 5: INNOVATIONS SECTION — ONLY TWO TOPICS (Requirements 2, 4, 5)
+         ======================================================================== -->
+    <section class="section section-dark tech-grid-dark" id="innovations">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag orange">Core Technological Innovations</span>
+          <h2 class="section-title">Visualized Innovation Mechanisms</h2>
+          <p class="section-subtitle">
+            Two proprietary engineering mechanisms designed to eliminate external fluidization water and automate blockage prevention.
+          </p>
+        </div>
+
+        <!-- ==================================================================
+             INNOVATION TOPIC 1: SELF-FLUIDIZING INTAKE MECHANISM (Requirement 2)
+             ================================================================== -->
+        <div class="showcase-3d-wrapper" style="margin-bottom: 4rem;">
+          <div class="showcase-header">
+            <div class="showcase-title-row">
+              <span class="badge badge-estimate">INNOVATION 01</span>
+              <h3>Self-Fluidizing Intake Mechanism</h3>
+            </div>
+            <span class="badge badge-target">Dual-Action Supernatant Recirculation</span>
+          </div>
+
+          <div class="showcase-viewport">
+            <img src="assets/self-fluidizing-intake-3d.jpg" alt="Realistic 3D CAD visualization of self-fluidizing intake probe operating in septic tank loosening thick sludge with rotating jet nozzles" />
+            <!-- Visual Callouts -->
+            <div class="tech-label-pin" style="top: 25%; left: 18%;">
+              <span class="tech-label-dot"></span> Pressurized Recirculated Bypass Liquid (Cyan)
+            </div>
+            <div class="tech-label-pin" style="top: 36%; right: 20%;">
+              <span class="tech-label-dot orange"></span> Loosened Sludge Slurry Suction (Amber)
+            </div>
+            <div class="tech-label-pin" style="bottom: 22%; left: 24%;">
+              <span class="tech-label-dot"></span> Rotating Liquid Jet Ring
+            </div>
+            <div class="tech-label-pin" style="bottom: 12%; right: 28%;">
+              <span class="tech-label-dot orange"></span> Thick Settled Sludge Zone
+            </div>
+          </div>
+
+          <!-- EXACT MANDATED SHORT CAPTION -->
+          <div class="showcase-caption-box">
+            <p class="showcase-caption-text">
+              “Uses recirculated pit liquid to loosen thick sludge without a separate jet pump.”
+            </p>
+            <div class="showcase-status-badge">
+              PROPOSED MECHANISM • EXPERIMENTAL VALIDATION REQUIRED
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             INNOVATION TOPIC 2: INTELLIGENT PUMP CONTROL (Requirement 4)
+             ================================================================== -->
+        <div class="showcase-3d-wrapper">
+          <div class="showcase-header">
+            <div class="showcase-title-row">
+              <span class="badge badge-estimate">INNOVATION 02</span>
+              <h3>Intelligent Pump Control</h3>
+            </div>
+            <span class="badge badge-validate">Proposed control concept — not a tested or validated system</span>
+          </div>
+
+          <div class="showcase-viewport">
+            <img src="assets/intelligent-pump-control-3d.jpg" alt="3D visualization of intelligent mechatronic pump control showing motor current, discharge pressure, magnetic flow meter, and smart controller" />
+          </div>
+
+          <!-- Interactive Operating Sequence Animator & Telemetry Simulator -->
+          <div style="padding: 1.5rem; background-color: #07111D; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+            <div class="flex items-center justify-between flex-wrap gap-3" style="margin-bottom: 1rem;">
+              <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #CBD5E1; text-transform: uppercase;">
+                Interactive Operating Sequence: Click states to test control response
+              </div>
+              <button class="canvas-btn" id="sequence-auto-btn">▶ Auto Sequence</button>
+            </div>
+
+            <!-- Sequence Stepper Buttons -->
+            <div class="sequence-nav-bar">
+              <button class="sequence-nav-btn active" data-step="normal">
+                <span class="step-num">STATE 01</span>
+                Normal Pumping
+              </button>
+              <button class="sequence-nav-btn" data-step="resistance">
+                <span class="step-num">STATE 02</span>
+                Resistance Detected
+              </button>
+              <button class="sequence-nav-btn" data-step="blockage">
+                <span class="step-num">STATE 03</span>
+                Blockage & Backflush
+              </button>
+              <button class="sequence-nav-btn" data-step="dryrun">
+                <span class="step-num">STATE 04</span>
+                Loss of Flow / Shutdown
+              </button>
+            </div>
+
+            <!-- Telemetry & Dynamic Reaction Grid -->
+            <div class="control-sequence-grid">
+              <!-- Animated Reaction Banner -->
+              <div class="telemetry-dashboard">
+                <div>
+                  <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-teal-light); text-transform: uppercase;">
+                    CONTROL LOOP DECISION
+                  </div>
+                  <div id="sequence-status-banner" class="sequence-status-banner" style="margin-top: 0.75rem;">
+                    <strong>Normal Pumping:</strong> Fluid viscosity within expected limits. Microcontroller maintains optimal pump RPM while supplying 15% bypass liquid to the self-fluidizing jet nozzle.
+                  </div>
+                </div>
+
+                <div style="margin-top: 1.25rem; font-size: 0.8125rem; color: #94A3B8;">
+                  Sequence: Normal pumping → Increased resistance detected → Jet flow increases & pump speed reduces → If flow is lost, pump stops.
+                </div>
+              </div>
+
+              <!-- Live Sensor Gauge Readouts -->
+              <div style="background-color: rgba(15, 27, 43, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 1.25rem;">
+                <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #94A3B8; text-transform: uppercase; margin-bottom: 0.5rem;">
+                  REAL-TIME TELEMETRY SENSORS
+                </div>
+
+                <div class="telemetry-readout-grid">
+                  <div class="telemetry-tile">
+                    <div class="telemetry-tile-label">Motor Current</div>
+                    <div class="telemetry-tile-val" id="tel-val-current">14.5 A</div>
+                    <div class="telemetry-bar-bg"><div class="telemetry-bar-fill" id="tel-bar-current" style="width: 45%;"></div></div>
+                  </div>
+                  <div class="telemetry-tile">
+                    <div class="telemetry-tile-label">Discharge Pressure</div>
+                    <div class="telemetry-tile-val" id="tel-val-pressure">3.2 Bar</div>
+                    <div class="telemetry-bar-bg"><div class="telemetry-bar-fill" id="tel-bar-pressure" style="width: 35%;"></div></div>
+                  </div>
+                  <div class="telemetry-tile">
+                    <div class="telemetry-tile-label">Inline Flow Rate</div>
+                    <div class="telemetry-tile-val" id="tel-val-flow">28.1 L/m</div>
+                    <div class="telemetry-bar-bg"><div class="telemetry-bar-fill" id="tel-bar-flow" style="width: 80%;"></div></div>
+                  </div>
+                  <div class="telemetry-tile">
+                    <div class="telemetry-tile-label">Pump Speed (RPM)</div>
+                    <div class="telemetry-tile-val" id="tel-val-rpm">1,120</div>
+                    <div class="telemetry-bar-bg"><div class="telemetry-bar-fill" id="tel-bar-rpm" style="width: 85%;"></div></div>
+                  </div>
+                </div>
+
+                <div class="flex items-center justify-between" style="font-family: var(--font-mono); font-size: 0.75rem; color: #CBD5E1; margin-top: 0.5rem;">
+                  <span>Recirculation Jet Valve:</span>
+                  <span id="tel-val-bypass" style="color: var(--color-teal-light); font-weight: 700;">15% Open</span>
+                </div>
+                <div class="telemetry-bar-bg"><div class="telemetry-bar-fill" id="tel-bar-bypass" style="width: 15%; background-color: var(--color-teal-light);"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- EXACT MANDATED SHORT CAPTION -->
+          <div class="showcase-caption-box">
+            <p class="showcase-caption-text">
+              “Monitors operating conditions and adjusts pumping to help prevent blockages and dry running.”
+            </p>
+            <div class="showcase-status-badge">
+              PROPOSED CONTROL CONCEPT • NOT A TESTED OR VALIDATED SYSTEM
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 6: SYSTEM ARCHITECTURE SCHEMATIC
+         ======================================================================== -->
+    <section class="section" id="architecture">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag teal">Interactive Schematic</span>
+          <h2 class="section-title">System Architecture Schematic</h2>
+          <p class="section-subtitle">
+            Closed-circuit fluidic flow, bypass jet loop, and electro-pneumatic sensor bus. Click any block to view specifications.
+          </p>
+        </div>
+
+        <div class="schematic-wrapper">
+          <div class="schematic-controls-bar">
+            <div class="schematic-legend">
+              <div class="legend-item"><span class="legend-line legend-sludge"></span><span>Sludge Flow Path</span></div>
+              <div class="legend-item"><span class="legend-line legend-recirc"></span><span>Recirculation Jet Loop</span></div>
+              <div class="legend-item"><span class="legend-line legend-signal"></span><span>24V & Sensor Signals</span></div>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #94A3B8;">Click blocks to inspect</div>
+          </div>
+
+          <!-- Interactive Responsive SVG Schematic -->
+          <svg class="svg-schematic" viewBox="0 0 960 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="20" width="220" height="420" rx="8" fill="rgba(30, 41, 59, 0.4)" stroke="#1E3A5F" stroke-dasharray="4 4"/>
+            <text x="35" y="45" font-family="JetBrains Mono" font-size="11" fill="#64748B" font-weight="600">ZONE 1: PIT ACCESS</text>
+
+            <rect x="270" y="20" width="410" height="420" rx="8" fill="rgba(13, 148, 136, 0.05)" stroke="rgba(13, 148, 136, 0.3)" stroke-dasharray="4 4"/>
+            <text x="285" y="45" font-family="JetBrains Mono" font-size="11" fill="#0D9488" font-weight="600">ZONE 2: DAUGHTER ROBOT (PC PUMP)</text>
+
+            <rect x="710" y="20" width="230" height="420" rx="8" fill="rgba(2, 132, 199, 0.05)" stroke="rgba(2, 132, 199, 0.3)" stroke-dasharray="4 4"/>
+            <text x="725" y="45" font-family="JetBrains Mono" font-size="11" fill="#0284C7" font-weight="600">ZONE 3: ROADWAY MOTHER TRUCK</text>
+
+            <!-- Pipe lines -->
+            <path d="M 130 240 L 130 170 L 320 170" stroke="#EA580C" stroke-width="4" fill="none"/>
+            <path class="flow-sludge-anim" d="M 130 240 L 130 170 L 320 170" stroke="#F97316" stroke-width="2" fill="none"/>
+
+            <path d="M 440 170 L 530 170 L 530 130 L 730 130" stroke="#EA580C" stroke-width="4" fill="none"/>
+            <path class="flow-sludge-anim" d="M 440 170 L 530 170 L 530 130 L 730 130" stroke="#F97316" stroke-width="2" fill="none"/>
+
+            <path d="M 480 170 L 480 260 L 170 260 L 170 300 L 130 300" stroke="#0D9488" stroke-width="3" fill="none"/>
+            <path class="flow-recirc-anim" d="M 480 170 L 480 260 L 170 260 L 170 300 L 130 300" stroke="#14B8A6" stroke-width="2" fill="none"/>
+
+            <!-- Nodes -->
+            <g class="schematic-node" data-node="tank">
+              <rect x="40" y="330" width="180" height="85" rx="6" fill="#132438" stroke="#475569" stroke-width="2"/>
+              <text x="130" y="365" font-family="Outfit" font-size="13" fill="#FFFFFF" font-weight="700" text-anchor="middle">Septic Tank / Pit</text>
+              <text x="130" y="385" font-family="Plus Jakarta Sans" font-size="10" fill="#94A3B8" text-anchor="middle">Settled Sludge + Liquid</text>
+            </g>
+
+            <g class="schematic-node" data-node="station">
+              <rect x="40" y="65" width="180" height="70" rx="6" fill="#132438" stroke="#1E3A5F" stroke-width="2"/>
+              <text x="130" y="95" font-family="Outfit" font-size="13" fill="#FFFFFF" font-weight="700" text-anchor="middle">Tripod Probe Station</text>
+              <text x="130" y="115" font-family="Plus Jakarta Sans" font-size="10" fill="#F59E0B" text-anchor="middle">Flexible Vapor Skirt</text>
+            </g>
+
+            <g class="schematic-node" data-node="probe">
+              <rect x="40" y="200" width="180" height="90" rx="6" fill="#132438" stroke="#14B8A6" stroke-width="2.5"/>
+              <text x="130" y="230" font-family="Outfit" font-size="13" fill="#14B8A6" font-weight="700" text-anchor="middle">Self-Fluidizing Probe</text>
+              <text x="130" y="250" font-family="Plus Jakarta Sans" font-size="10" fill="#E2E8F0" text-anchor="middle">Rotating Jet + Suction Inlet</text>
+              <circle cx="210" cy="210" r="4" fill="#14B8A6" class="ping"/>
+            </g>
+
+            <g class="schematic-node selected" data-node="pump">
+              <rect x="310" y="130" width="140" height="80" rx="6" fill="#132438" stroke="#EA580C" stroke-width="2.5"/>
+              <text x="380" y="162" font-family="Outfit" font-size="13" fill="#FFFFFF" font-weight="700" text-anchor="middle">PC Sludge Pump</text>
+              <text x="380" y="182" font-family="Plus Jakarta Sans" font-size="10" fill="#CBD5E1" text-anchor="middle">Progressive Cavity Rotor</text>
+              <text x="380" y="198" font-family="JetBrains Mono" font-size="8" fill="#0D9488" text-anchor="middle">Positive Displacement</text>
+            </g>
+
+            <g class="schematic-node" data-node="bypass">
+              <rect x="300" y="235" width="160" height="50" rx="6" fill="#132438" stroke="#0D9488" stroke-width="2"/>
+              <text x="380" y="260" font-family="Outfit" font-size="12" fill="#14B8A6" font-weight="700" text-anchor="middle">Jet Bypass Valve</text>
+              <text x="380" y="276" font-family="JetBrains Mono" font-size="8" fill="#94A3B8" text-anchor="middle">Recirculation Loop</text>
+            </g>
+
+            <g class="schematic-node" data-node="hose">
+              <rect x="520" y="95" width="145" height="65" rx="6" fill="#132438" stroke="#F97316" stroke-width="2"/>
+              <text x="592" y="122" font-family="Outfit" font-size="12" fill="#FFFFFF" font-weight="700" text-anchor="middle">Lay-Flat Hose Line</text>
+              <text x="592" y="140" font-family="JetBrains Mono" font-size="9" fill="#F97316" text-anchor="middle">50–100 m Target</text>
+            </g>
+
+            <g class="schematic-node" data-node="mother">
+              <rect x="730" y="80" width="190" height="140" rx="8" fill="#0F3854" stroke="#0284C7" stroke-width="2"/>
+              <text x="825" y="115" font-family="Outfit" font-size="13" fill="#FFFFFF" font-weight="700" text-anchor="middle">Mother Unit Tank</text>
+              <text x="825" y="135" font-family="Plus Jakarta Sans" font-size="10" fill="#94A3B8" text-anchor="middle">Sealed Storage (2–4 m³)</text>
+              <text x="825" y="165" font-family="JetBrains Mono" font-size="9" fill="#38BDF8" text-anchor="middle">Rear Transport Deck</text>
+            </g>
+
+            <g class="schematic-node" data-node="controller">
+              <rect x="475" y="315" width="185" height="95" rx="6" fill="#132438" stroke="#F59E0B" stroke-width="2"/>
+              <text x="567" y="342" font-family="Outfit" font-size="12" fill="#F59E0B" font-weight="700" text-anchor="middle">Intelligent Controller</text>
+              <text x="567" y="362" font-family="Plus Jakarta Sans" font-size="9" fill="#E2E8F0" text-anchor="middle">Current + Pressure + Flow</text>
+              <text x="567" y="382" font-family="JetBrains Mono" font-size="8" fill="#14B8A6" text-anchor="middle">Speed & Jet Optimization</text>
+            </g>
+
+            <g class="schematic-node" data-node="gas">
+              <rect x="730" y="260" width="190" height="85" rx="6" fill="#132438" stroke="#DC2626" stroke-width="2"/>
+              <text x="825" y="290" font-family="Outfit" font-size="12" fill="#EF4444" font-weight="700" text-anchor="middle">Gas Safety Interlock</text>
+              <text x="825" y="310" font-family="Plus Jakarta Sans" font-size="9" fill="#E2E8F0" text-anchor="middle">H₂S, CH₄ Continuous</text>
+              <text x="825" y="328" font-family="JetBrains Mono" font-size="8" fill="#F87171" text-anchor="middle">Hardwired Motor Cutoff</text>
+            </g>
+          </svg>
+
+          <!-- Inspector Details Card -->
+          <div class="schematic-inspector-card" id="schematic-inspector">
+            <div style="flex-grow: 1;">
+              <div class="flex items-center gap-4" style="margin-bottom: 0.35rem;">
+                <h4 id="inspector-title" style="color: #FFFFFF; font-size: 1.25rem;">Progressive Cavity Sludge Pump</h4>
+                <span class="badge badge-estimate" id="inspector-type">Positive-Displacement Pump (Daughter Unit)</span>
+              </div>
+              <p id="inspector-desc" style="color: #CBD5E1; font-size: 0.9375rem; margin-bottom: 0.5rem;">
+                Metallic helical rotor rotating inside a resilient elastomer double-helix stator.
+              </p>
+              <p id="inspector-details" style="color: #94A3B8; font-size: 0.85rem; margin-bottom: 0;">
+                Generates non-pulsating positive discharge pressure to push thick viscous sludge through 50–100 m lay-flat hose.
+              </p>
+            </div>
+            <div style="text-align: right; min-width: 170px;">
+              <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #64748B; text-transform: uppercase;">Operating State</div>
+              <div id="inspector-status" style="font-family: var(--font-mono); font-weight: 700; color: var(--color-teal-light); font-size: 0.9375rem; margin-top: 0.25rem;">
+                Positive-Displacement Transfer
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 7: ENGINEERING SPECIFICATIONS DASHBOARD
+         ======================================================================== -->
+    <section class="section section-dark tech-grid-dark" id="specifications">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Technical Parameters</span>
+          <h2 class="section-title">Engineering Specifications</h2>
+          <p class="section-subtitle">
+            Target design estimates versus proposed baseline components. Strictly zero fabricated performance data.
+          </p>
+        </div>
+
+        <div class="mode-toggle-container" style="margin-bottom: 1.5rem;">
+          <div class="mode-toggle-group">
+            <button class="mode-toggle-btn active specs-filter-btn" data-category="all">All Specs</button>
+            <button class="mode-toggle-btn specs-filter-btn" data-category="daughter">Daughter Unit</button>
+            <button class="mode-toggle-btn specs-filter-btn" data-category="system">System Targets</button>
+            <button class="mode-toggle-btn specs-filter-btn" data-category="safety">Safety & Controls</button>
+          </div>
+        </div>
+
+        <div class="specs-table-container">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Subsystem / Parameter</th>
+                <th>Engineering Value</th>
+                <th>Classification</th>
+                <th class="th-status-rationale">Status & Rationale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-category="daughter">
+                <td class="spec-param">Pump Architecture</td>
+                <td class="spec-val">Progressive Cavity (Positive Displacement)</td>
+                <td><span class="badge badge-target">Component Selection</span></td>
+                <td class="spec-status-rationale">Non-pulsating high-viscosity transfer; <strong>no vacuum pump</strong>.</td>
+              </tr>
+              <tr data-category="daughter">
+                <td class="spec-param">Holding Tank Capacity</td>
+                <td class="spec-val">Proposed 200–250 L</td>
+                <td><span class="badge badge-estimate">Design Estimate</span></td>
+                <td class="spec-status-rationale">Temporary inline buffer; prevents chassis overload on gradients.</td>
+              </tr>
+              <tr data-category="daughter">
+                <td class="spec-param">Drive Platform</td>
+                <td class="spec-val">4WD Electric Rover Chassis</td>
+                <td><span class="badge badge-target">Design Target</span></td>
+                <td class="spec-status-rationale">Independent high-torque gearmotors; navigates 1.2 m narrow alleys.</td>
+              </tr>
+              <tr data-category="daughter">
+                <td class="spec-param">Intake Fluidization</td>
+                <td class="spec-val">Rotating Jet Ring + Flexible Auger</td>
+                <td><span class="badge badge-validate">To Be Validated</span></td>
+                <td class="spec-status-rationale">Uses in-pit supernatant bypass; avoids external fluidization water.</td>
+              </tr>
+              <tr data-category="system">
+                <td class="spec-param">Direct-Mode Hose Reach</td>
+                <td class="spec-val">50–100 m Maximum Target</td>
+                <td><span class="badge badge-target">Target For Testing</span></td>
+                <td class="spec-status-rationale">Target for prototype trials; unproven head loss over elevation.</td>
+              </tr>
+              <tr data-category="system">
+                <td class="spec-param">Estimated Empty Weight</td>
+                <td class="spec-val">Approximately 330 kg</td>
+                <td><span class="badge badge-estimate">Provisional Estimate</span></td>
+                <td class="spec-status-rationale">Includes chassis, PC pump, empty buffer tank, battery pack.</td>
+              </tr>
+              <tr data-category="system">
+                <td class="spec-param">Estimated Loaded Weight</td>
+                <td class="spec-val">Approximately 600 kg</td>
+                <td><span class="badge badge-estimate">Provisional Estimate</span></td>
+                <td class="spec-status-rationale">Calculated with 250 L full buffer tank during carry mode.</td>
+              </tr>
+              <tr data-category="system">
+                <td class="spec-param">Estimated System Budget</td>
+                <td class="spec-val">₹2,00,000 – ₹3,00,000</td>
+                <td><span class="badge badge-estimate">Planning Allocation</span></td>
+                <td class="spec-status-rationale">Preliminary daughter unit estimate. <strong>Excludes road vehicle.</strong></td>
+              </tr>
+              <tr data-category="safety">
+                <td class="spec-param">Power Storage</td>
+                <td class="spec-val">24V Swappable LiFePO₄ Battery</td>
+                <td><span class="badge badge-target">Architecture Target</span></td>
+                <td class="spec-status-rationale">High thermal stability, safe cell chemistry, rapid field swaps.</td>
+              </tr>
+              <tr data-category="safety">
+                <td class="spec-param">Atmospheric Monitoring</td>
+                <td class="spec-val">H₂S, CH₄ (LEL), CO, O₂ Sensors</td>
+                <td><span class="badge badge-target">Safety Suite</span></td>
+                <td class="spec-status-rationale">Continuous atmospheric evaluation with 2-level alarms and relay cut.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 8: SAFETY AND CONTROL LOGIC ("Safety by Design")
+         ======================================================================== -->
+    <section class="section" id="safety">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag orange">Risk Mitigation</span>
+          <h2 class="section-title">Safety by Design</h2>
+          <p class="section-subtitle">
+            Multi-tiered hazard mitigation: Gas clearance, pump dry-run interlocks, and mechanical stability.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-6">
+          <div class="card">
+            <div class="card-icon-wrapper icon-red">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h4>Gas Safety Protocol</h4>
+            <p class="card-desc">Check atmosphere from outside the pit before opening. Keep ignition sources away. Continuous H₂S/CH₄ monitoring with 2-level alarms.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon-wrapper icon-teal">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h4>Pump Protection Interlocks</h4>
+            <p class="card-desc">Motor current, pressure, and inline flow monitoring. Instant stop on suspected dry running. Pressure relief and automated backflush.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon-wrapper icon-orange">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <h4>Mechanical Safety</h4>
+            <p class="card-desc">Rated aluminum tripod (150 kg WLL) and hoist. Automatic parking brake, wheel chocks, tilt sensor, and buffer float switch.</p>
+          </div>
+        </div>
+
+        <!-- Two-Level Alarm Simulator -->
+        <div style="background-color: var(--color-slate-card); border: 1px solid var(--color-slate-border); border-radius: var(--radius-lg); padding: 1.75rem; margin-top: 2rem;">
+          <div class="flex items-center justify-between flex-wrap gap-4" style="margin-bottom: 1rem;">
+            <div>
+              <h4 style="margin: 0;">Two-Level Alarm & Automated Response Logic</h4>
+              <p style="font-size: 0.8125rem; color: var(--color-slate-muted); margin: 0;">Test the emergency response:</p>
+            </div>
+            <div class="flex gap-2">
+              <button class="btn btn-sm btn-secondary-light alarm-sim-btn active" data-state="normal">Normal</button>
+              <button class="btn btn-sm btn-secondary-light alarm-sim-btn" data-state="warning" style="color: var(--color-amber);">Level 1: Warning</button>
+              <button class="btn btn-sm btn-secondary-light alarm-sim-btn" data-state="danger" style="color: var(--color-alert-red);">Level 2: Danger</button>
+            </div>
+          </div>
+
+          <div id="alarm-sim-status" style="padding: 1rem 1.25rem; border-radius: 6px; background-color: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); display: flex; align-items: center; gap: 1rem;">
+            <div id="alarm-sim-indicator" style="width: 12px; height: 12px; border-radius: 50%; background-color: #059669; flex-shrink: 0;"></div>
+            <div>
+              <h5 style="margin-bottom: 0.15rem; font-family: var(--font-heading); color: #059669;">NORMAL OPERATION (All Sensors Green)</h5>
+              <div id="alarm-sim-action" style="font-size: 0.8125rem; color: var(--color-slate-body);">
+                Atmosphere safe (H₂S < 5 ppm, LEL < 5%). Continuous pumping and fluidization active.
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-notice danger" style="margin-top: 1.25rem; margin-bottom: 0;">
+            <svg class="tech-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <div>
+              <strong>Safety Disclaimer:</strong> Stopping electric motors alone does NOT render a confined hazardous atmosphere safe. Final commercial systems require formal ATEX certification and site-specific ventilation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 9: OPERATING WORKFLOW (9-Step Lifecycle)
+         ======================================================================== -->
+    <section class="section section-dark tech-grid-dark" id="workflow">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag teal">Operational Procedure</span>
+          <h2 class="section-title">9-Step Operating Workflow</h2>
+          <p class="section-subtitle">
+            A closed mechanized desludging sequence designed to eliminate worker contact with faecal sludge.
+          </p>
+        </div>
+
+        <div class="workflow-track">
+          <div class="workflow-card active" data-step-index="0"><span class="workflow-step-num">STEP 01</span><h4>Mother Staging</h4><p>Park truck on nearest road, secure chocks, set hazard cones.</p></div>
+          <div class="workflow-card" data-step-index="1"><span class="workflow-step-num">STEP 02</span><h4>Daughter Unloading</h4><p>Deploy rear ramp, navigate 4WD unit remotely down narrow alley.</p></div>
+          <div class="workflow-card" data-step-index="2"><span class="workflow-step-num">STEP 03</span><h4>Gas Assessment</h4><p>Sample pit atmosphere from outside before touching manhole.</p></div>
+          <div class="workflow-card" data-step-index="3"><span class="workflow-step-num">STEP 04</span><h4>Position Station</h4><p>Erect tripod over pit mouth; seat flexible vapor skirt flush.</p></div>
+          <div class="workflow-card" data-step-index="4"><span class="workflow-step-num">STEP 05</span><h4>Lower Probe</h4><p>Lower probe assembly using hoist into supernatant layer.</p></div>
+          <div class="workflow-card" data-step-index="5"><span class="workflow-step-num">STEP 06</span><h4>Activate Jet & Pump</h4><p>Engage pump bypass to direct liquid jet into bottom sludge cake.</p></div>
+          <div class="workflow-card" data-step-index="6"><span class="workflow-step-num">STEP 07</span><h4>Closed-Loop Control</h4><p>Microcontroller monitors current, pressure, flow for blockages.</p></div>
+          <div class="workflow-card" data-step-index="7"><span class="workflow-step-num">STEP 08</span><h4>Hose Transfer</h4><p>Transfer sludge continuously via lay-flat hose to mother truck.</p></div>
+          <div class="workflow-card" data-step-index="8"><span class="workflow-step-num">STEP 09</span><h4>Decontaminate & Close</h4><p>Clean-water backflush, disinfect, secure manhole, log job.</p></div>
+        </div>
+
+        <div class="card card-dark" style="margin-top: 1.5rem; background-color: var(--color-navy-surface); border-color: var(--color-teal);">
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <h4 id="step-detail-title" style="color: #FFFFFF; margin-bottom: 0.5rem;">Step 01: Mother Vehicle Roadway Staging</h4>
+              <p id="step-detail-desc" style="color: #CBD5E1; font-size: 0.875rem;">Park mother utility truck on nearest accessible road, set hazard cones, deploy ramp.</p>
+              <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-safety-orange-bright); margin-top: 0.5rem;" id="step-detail-safety">Verify traffic clearance; ensure exhaust fumes blow away from working lanes.</div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-teal-light); text-transform: uppercase;">Checklist:</div>
+              <ul class="unit-features-list" id="step-detail-checklist" style="padding: 0; font-size: 0.8125rem;">
+                <li><span class="unit-feature-bullet">✓</span>Park on level, stable asphalt/gravel</li>
+                <li><span class="unit-feature-bullet">✓</span>Deploy high-visibility safety cones</li>
+                <li><span class="unit-feature-bullet">✓</span>Inspect lay-flat hose couplings</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 10: BUDGET & BUSINESS VIABILITY CALCULATOR
+         ======================================================================== -->
+    <section class="section" id="economics">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag teal">Financial Viability</span>
+          <h2 class="section-title">Budget and Economic Sensitivity</h2>
+          <p class="section-subtitle">
+            Daughter unit planning budget: ₹2–3 Lakh (excluding road vehicle). Adjust operational parameters below to model viability.
+          </p>
+        </div>
+
+        <div class="calc-wrapper">
+          <div class="calc-grid">
+            <div class="calc-controls">
+              <div class="calc-input-group">
+                <div class="calc-label-row">
+                  <span>Desludging Jobs per Month:</span>
+                  <span class="calc-current-val" id="calc-jobs-val">30 jobs / month</span>
+                </div>
+                <input type="range" min="5" max="60" step="1" value="30" class="calc-slider" id="calc-jobs-slider" />
+              </div>
+
+              <div class="grid grid-cols-3 gap-4">
+                <div class="calc-input-group">
+                  <span style="font-size: 0.8125rem; font-weight: 600;">Fee / Job (₹)</span>
+                  <input type="number" value="1500" step="100" class="btn btn-secondary-light" style="width: 100%; text-align: left; font-family: var(--font-mono);" id="calc-rev-input" />
+                </div>
+                <div class="calc-input-group">
+                  <span style="font-size: 0.8125rem; font-weight: 600;">Monthly Costs (₹)</span>
+                  <input type="number" value="24000" step="1000" class="btn btn-secondary-light" style="width: 100%; text-align: left; font-family: var(--font-mono);" id="calc-cost-input" />
+                </div>
+                <div class="calc-input-group">
+                  <span style="font-size: 0.8125rem; font-weight: 600;">Capex (₹)</span>
+                  <input type="number" value="250000" step="10000" class="btn btn-secondary-light" style="width: 100%; text-align: left; font-family: var(--font-mono);" id="calc-capex-input" />
+                </div>
+              </div>
+
+              <div class="calc-presets">
+                <button class="btn btn-sm btn-secondary-light" id="calc-preset-baseline">Baseline (30 Jobs)</button>
+                <button class="btn btn-sm btn-secondary-light" id="calc-preset-low">Low-Demand (15 Jobs)</button>
+                <button class="btn btn-sm btn-secondary-light" id="calc-preset-high">High-Utilization (45 Jobs)</button>
+              </div>
+            </div>
+
+            <div class="calc-results-card">
+              <div>
+                <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-teal-light); text-transform: uppercase;">
+                  FINANCIAL PROJECTION
+                </div>
+                <div class="calc-metric-row">
+                  <span style="color: #94A3B8;">Monthly Revenue:</span>
+                  <span class="calc-metric-val" id="calc-out-revenue" style="color: #FFFFFF;">₹45,000</span>
+                </div>
+                <div class="calc-metric-row">
+                  <span style="color: #94A3B8;">Running Costs:</span>
+                  <span class="calc-metric-val" id="calc-out-costs" style="color: #F87171;">₹24,000</span>
+                </div>
+                <div class="calc-metric-row" style="border-bottom-width: 2px;">
+                  <span style="color: #FFFFFF; font-weight: 700;">Monthly Surplus:</span>
+                  <span class="calc-metric-val" id="calc-out-surplus" style="color: var(--color-green-light); font-size: 1.15rem;">₹21,000</span>
+                </div>
+                <div class="calc-metric-row">
+                  <span style="color: #94A3B8;">Simple Payback:</span>
+                  <span class="calc-metric-val" id="calc-out-payback" style="color: #38BDF8;">~11.9 Months</span>
+                </div>
+              </div>
+
+              <div id="calc-out-status" class="calc-status-callout calc-status-surplus" style="margin-top: 1rem; font-size: 0.8125rem;">
+                <strong>Positive Operational Surplus:</strong> Generates ₹21,000/month towards capital recovery.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 11: FINAL CALL TO ACTION
+         ======================================================================== -->
+    <section class="section" style="background: linear-gradient(135deg, #091422, #0F2236); color: #FFFFFF;" id="cta">
+      <div class="container" style="text-align: center; max-width: 850px;">
+        <span class="section-tag" style="background-color: rgba(234, 88, 12, 0.15); color: var(--color-safety-orange-bright); border-color: rgba(234, 88, 12, 0.35);">
+          Advancing Mechanized Sanitation
+        </span>
+        <h2 style="color: #FFFFFF; font-size: clamp(1.85rem, 3.2vw, 2.5rem); margin: 1rem 0;">
+          “Bringing Mechanized Sanitation to the Places Trucks Cannot Reach.”
+        </h2>
+        <p style="color: #CBD5E1; font-size: 1rem; line-height: 1.6; margin-bottom: 2rem;">
+          Our goal is to develop a practical, locally serviceable system that expands access to mechanized desludging while prioritizing worker safety and environmental protection.
+        </p>
+
+        <div class="flex justify-center gap-4 flex-wrap">
+          <a href="#pump-technology" class="btn btn-primary">Progressive Cavity Pump 3D</a>
+          <a href="#innovations" class="btn btn-secondary">Visualized Innovations</a>
+          <button class="btn btn-orange" data-open-modal="contact">Discuss Collaboration</button>
+        </div>
+
+        <div style="margin-top: 2.5rem; font-size: 0.8125rem; color: #64748B;">
+          Student Engineering Innovation Project • Sanitation Mechatronics Research
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TEAM MEMBERS SECTION — 6 SEPARATE SLIDES
+         ======================================================================== -->
+    
+    <!-- SLIDE 12 (TEAM MEMBER 1): Yuthiha M -->
+    <section class="section section-dark tech-grid-dark profile-slide-section" id="team-members">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+          <span class="section-tag teal">TEAM MEMBERS • SLIDE 01 / 06</span>
+          <h2 class="section-title">Team Leadership & Coordination</h2>
+        </div>
+
+        <div class="profile-slide-card" id="team-member-1">
+          <div class="profile-card-grid">
+            <div class="profile-photo-container">
+              <div class="profile-photo-frame">
+                <img src="assets/team/yuthiha-m.png" alt="Yuthiha M - Team Lead and Coordination" class="profile-photo-img" />
+              </div>
+              <div class="profile-photo-tag">
+                <span class="tech-label-dot"></span> TEAM MEMBER 01 / 06
+              </div>
+            </div>
+
+            <div class="profile-content-container">
+              <span class="profile-category-pill">NOVAMINDS CORE TEAM</span>
+              <h3 class="profile-name">Yuthiha M</h3>
+              <div class="profile-role-title">Team Lead and Coordination</div>
+
+              <div class="profile-divider"></div>
+
+              <div class="profile-meta-row">
+                <span class="profile-meta-badge">Project Management</span>
+                <span class="profile-meta-badge">Cross-Functional Lead</span>
+                <span class="profile-meta-badge">Mother-Daughter Integration</span>
+              </div>
+
+              <div class="profile-nav-bar">
+                <a href="#cta" class="btn btn-secondary btn-sm">← Previous Section</a>
+                <div class="profile-dots-track">
+                  <span class="profile-dot-pill active"></span>
+                  <a href="#team-member-2" class="profile-dot-pill"></a>
+                  <a href="#team-member-3" class="profile-dot-pill"></a>
+                  <a href="#team-member-4" class="profile-dot-pill"></a>
+                  <a href="#team-member-5" class="profile-dot-pill"></a>
+                  <a href="#team-member-6" class="profile-dot-pill"></a>
+                </div>
+                <a href="#team-member-2" class="btn btn-primary btn-sm">Next Member →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 13 (TEAM MEMBER 2): Sathish Kumar S -->
+    <section class="section section-dark tech-grid-dark profile-slide-section" id="team-member-2">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+          <span class="section-tag teal">TEAM MEMBERS • SLIDE 02 / 06</span>
+          <h2 class="section-title">Mechanical Engineering & CAD</h2>
+        </div>
+
+        <div class="profile-slide-card">
+          <div class="profile-card-grid">
+            <div class="profile-photo-container">
+              <div class="profile-photo-frame">
+                <img src="assets/team/sathish-kumar-s.jpg" alt="Sathish Kumar S - Mechanical Design and CAD" class="profile-photo-img" />
+              </div>
+              <div class="profile-photo-tag">
+                <span class="tech-label-dot"></span> TEAM MEMBER 02 / 06
+              </div>
+            </div>
+
+            <div class="profile-content-container">
+              <span class="profile-category-pill">NOVAMINDS CORE TEAM</span>
+              <h3 class="profile-name">Sathish Kumar S</h3>
+              <div class="profile-role-title">Mechanical Design and CAD</div>
+
+              <div class="profile-divider"></div>
+
+              <div class="profile-meta-row">
+                <span class="profile-meta-badge">3D Cutaway Modelling</span>
+                <span class="profile-meta-badge">Positive-Displacement Pump Mount</span>
+                <span class="profile-meta-badge">Daughter Rover Chassis</span>
+              </div>
+
+              <div class="profile-nav-bar">
+                <a href="#team-member-1" class="btn btn-secondary btn-sm">← Previous Member</a>
+                <div class="profile-dots-track">
+                  <a href="#team-member-1" class="profile-dot-pill"></a>
+                  <span class="profile-dot-pill active"></span>
+                  <a href="#team-member-3" class="profile-dot-pill"></a>
+                  <a href="#team-member-4" class="profile-dot-pill"></a>
+                  <a href="#team-member-5" class="profile-dot-pill"></a>
+                  <a href="#team-member-6" class="profile-dot-pill"></a>
+                </div>
+                <a href="#team-member-3" class="btn btn-primary btn-sm">Next Member →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 14 (TEAM MEMBER 3): Abdul Althaf A -->
+    <section class="section section-dark tech-grid-dark profile-slide-section" id="team-member-3">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+          <span class="section-tag teal">TEAM MEMBERS • SLIDE 03 / 06</span>
+          <h2 class="section-title">Control Systems & Mechatronics</h2>
+        </div>
+
+        <div class="profile-slide-card">
+          <div class="profile-card-grid">
+            <div class="profile-photo-container">
+              <div class="profile-photo-frame">
+                <img src="assets/team/abdul-althaf-a.jpg" alt="Abdul Althaf A - Control and Safety Systems" class="profile-photo-img" />
+              </div>
+              <div class="profile-photo-tag">
+                <span class="tech-label-dot"></span> TEAM MEMBER 03 / 06
+              </div>
+            </div>
+
+            <div class="profile-content-container">
+              <span class="profile-category-pill">NOVAMINDS CORE TEAM</span>
+              <h3 class="profile-name">Abdul Althaf A</h3>
+              <div class="profile-role-title">Control and Safety Systems</div>
+
+              <div class="profile-divider"></div>
+
+              <div class="profile-meta-row">
+                <span class="profile-meta-badge">Intelligent Pump Controller</span>
+                <span class="profile-meta-badge">Gas Hazard Interlocks (H₂S, CH₄)</span>
+                <span class="profile-meta-badge">Telemetry & Feedback Loops</span>
+              </div>
+
+              <div class="profile-nav-bar">
+                <a href="#team-member-2" class="btn btn-secondary btn-sm">← Previous Member</a>
+                <div class="profile-dots-track">
+                  <a href="#team-member-1" class="profile-dot-pill"></a>
+                  <a href="#team-member-2" class="profile-dot-pill"></a>
+                  <span class="profile-dot-pill active"></span>
+                  <a href="#team-member-4" class="profile-dot-pill"></a>
+                  <a href="#team-member-5" class="profile-dot-pill"></a>
+                  <a href="#team-member-6" class="profile-dot-pill"></a>
+                </div>
+                <a href="#team-member-4" class="btn btn-primary btn-sm">Next Member →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 15 (TEAM MEMBER 4): Dhilip Kumar K -->
+    <section class="section section-dark tech-grid-dark profile-slide-section" id="team-member-4">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+          <span class="section-tag teal">TEAM MEMBERS • SLIDE 04 / 06</span>
+          <h2 class="section-title">Techno-Economics & Impact</h2>
+        </div>
+
+        <div class="profile-slide-card">
+          <div class="profile-card-grid">
+            <div class="profile-photo-container">
+              <div class="profile-photo-frame">
+                <img src="assets/team/dhilip-kumar-k.jpg" alt="Dhilip Kumar K - Cost, Impact and Business" class="profile-photo-img" />
+              </div>
+              <div class="profile-photo-tag">
+                <span class="tech-label-dot"></span> TEAM MEMBER 04 / 06
+              </div>
+            </div>
+
+            <div class="profile-content-container">
+              <span class="profile-category-pill">NOVAMINDS CORE TEAM</span>
+              <h3 class="profile-name">Dhilip Kumar K</h3>
+              <div class="profile-role-title">Cost, Impact and Business</div>
+
+              <div class="profile-divider"></div>
+
+              <div class="profile-meta-row">
+                <span class="profile-meta-badge">CapEx & OpEx Modeling</span>
+                <span class="profile-meta-badge">Gram Panchayat Viability</span>
+                <span class="profile-meta-badge">Service Fee Sensitivity</span>
+              </div>
+
+              <div class="profile-nav-bar">
+                <a href="#team-member-3" class="btn btn-secondary btn-sm">← Previous Member</a>
+                <div class="profile-dots-track">
+                  <a href="#team-member-1" class="profile-dot-pill"></a>
+                  <a href="#team-member-2" class="profile-dot-pill"></a>
+                  <a href="#team-member-3" class="profile-dot-pill"></a>
+                  <span class="profile-dot-pill active"></span>
+                  <a href="#team-member-5" class="profile-dot-pill"></a>
+                  <a href="#team-member-6" class="profile-dot-pill"></a>
+                </div>
+                <a href="#team-member-5" class="btn btn-primary btn-sm">Next Member →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 16 (TEAM MEMBER 5): Vinotha K -->
+    <section class="section section-dark tech-grid-dark profile-slide-section" id="team-member-5">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+          <span class="section-tag teal">TEAM MEMBERS • SLIDE 05 / 06</span>
+          <h2 class="section-title">Testing & Empirical Validation</h2>
+        </div>
+
+        <div class="profile-slide-card">
+          <div class="profile-card-grid">
+            <div class="profile-photo-container">
+              <div class="profile-photo-frame">
+                <img src="assets/team/vinotha-k.png" alt="Vinotha K - Testing and Validation" class="profile-photo-img" />
+              </div>
+              <div class="profile-photo-tag">
+                <span class="tech-label-dot"></span> TEAM MEMBER 05 / 06
+              </div>
+            </div>
+
+            <div class="profile-content-container">
+              <span class="profile-category-pill">NOVAMINDS CORE TEAM</span>
+              <h3 class="profile-name">Vinotha K</h3>
+              <div class="profile-role-title">Testing and Validation</div>
+
+              <div class="profile-divider"></div>
+
+              <div class="profile-meta-row">
+                <span class="profile-meta-badge">Prototype Test Matrix</span>
+                <span class="profile-meta-badge">Sludge Viscosity Trials</span>
+                <span class="profile-meta-badge">Safety Interlock Protocols</span>
+              </div>
+
+              <div class="profile-nav-bar">
+                <a href="#team-member-4" class="btn btn-secondary btn-sm">← Previous Member</a>
+                <div class="profile-dots-track">
+                  <a href="#team-member-1" class="profile-dot-pill"></a>
+                  <a href="#team-member-2" class="profile-dot-pill"></a>
+                  <a href="#team-member-3" class="profile-dot-pill"></a>
+                  <a href="#team-member-4" class="profile-dot-pill"></a>
+                  <span class="profile-dot-pill active"></span>
+                  <a href="#team-member-6" class="profile-dot-pill"></a>
+                </div>
+                <a href="#team-member-6" class="btn btn-primary btn-sm">Next Member →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 17 (TEAM MEMBER 6): Esrane Benedict EK -->
+    <section class="section section-dark tech-grid-dark profile-slide-section" id="team-member-6">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+          <span class="section-tag teal">TEAM MEMBERS • SLIDE 06 / 06</span>
+          <h2 class="section-title">Field Research & User Context</h2>
+        </div>
+
+        <div class="profile-slide-card">
+          <div class="profile-card-grid">
+            <div class="profile-photo-container">
+              <div class="profile-photo-frame">
+                <img src="assets/team/esrane-benedict-ek.png" alt="Esrane Benedict EK - Field Research and Sanitation Needs" class="profile-photo-img" />
+              </div>
+              <div class="profile-photo-tag">
+                <span class="tech-label-dot"></span> TEAM MEMBER 06 / 06
+              </div>
+            </div>
+
+            <div class="profile-content-container">
+              <span class="profile-category-pill">NOVAMINDS CORE TEAM</span>
+              <h3 class="profile-name">Esrane Benedict EK</h3>
+              <div class="profile-role-title">Field Research and Sanitation Needs</div>
+
+              <div class="profile-divider"></div>
+
+              <div class="profile-meta-row">
+                <span class="profile-meta-badge">Terrain & Alley Access Studies</span>
+                <span class="profile-meta-badge">Sanitation Worker Safety Audits</span>
+                <span class="profile-meta-badge">On-Site Operational Requirements</span>
+              </div>
+
+              <div class="profile-nav-bar">
+                <a href="#team-member-5" class="btn btn-secondary btn-sm">← Previous Member</a>
+                <div class="profile-dots-track">
+                  <a href="#team-member-1" class="profile-dot-pill"></a>
+                  <a href="#team-member-2" class="profile-dot-pill"></a>
+                  <a href="#team-member-3" class="profile-dot-pill"></a>
+                  <a href="#team-member-4" class="profile-dot-pill"></a>
+                  <a href="#team-member-5" class="profile-dot-pill"></a>
+                  <span class="profile-dot-pill active"></span>
+                </div>
+                <a href="#mentors" class="btn btn-orange btn-sm">Proceed to Mentors →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         MENTORS SECTION — 3 SEPARATE SLIDES
+         ======================================================================== -->
+
+    <!-- SLIDE 18 (MENTOR 1): Muthusamy K -->
+    <section class="section section-dark tech-grid-dark profile-slide-section" id="mentors">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+          <span class="section-tag orange">MENTORS • SLIDE 01 / 03</span>
+          <h2 class="section-title">Technical Advisory & Competition Mentorship</h2>
+        </div>
+
+        <div class="profile-slide-card mentor-slide-card" id="mentor-1">
+          <div class="profile-card-grid">
+            <div class="profile-photo-container">
+              <div class="profile-photo-frame mentor-photo-frame">
+                <img src="assets/mentors/muthusamy-k.png" alt="Muthusamy K" class="profile-photo-img" />
+              </div>
+              <div class="profile-photo-tag mentor-photo-tag">
+                <span class="tech-label-dot orange"></span> PROJECT MENTOR 01 / 03
+              </div>
+            </div>
+
+            <div class="profile-content-container">
+              <span class="profile-category-pill mentor-category-pill">PROJECT MENTOR</span>
+              <h3 class="profile-name">Muthusamy K</h3>
+              <div class="profile-role-title mentor-role-title">Head – Technical Competition &amp; Hackathons</div>
+              <div class="profile-institution">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Rathinam Technical Campus, Coimbatore
+              </div>
+
+              <div class="profile-divider mentor-divider"></div>
+
+              <div class="profile-meta-row">
+                <span class="profile-meta-badge mentor-meta-badge">Innovation Mentorship</span>
+                <span class="profile-meta-badge mentor-meta-badge">Hackathon Advisory</span>
+                <span class="profile-meta-badge mentor-meta-badge">Technical Strategy</span>
+              </div>
+
+              <div class="profile-nav-bar">
+                <a href="#team-member-6" class="btn btn-secondary btn-sm">← Back to Team</a>
+                <div class="profile-dots-track">
+                  <span class="profile-dot-pill mentor-active"></span>
+                  <a href="#mentor-2" class="profile-dot-pill"></a>
+                  <a href="#mentor-3" class="profile-dot-pill"></a>
+                </div>
+                <a href="#mentor-2" class="btn btn-orange btn-sm">Next Mentor →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 19 (MENTOR 2): Er Gajendran Parthasarathi -->
+    <section class="section section-dark tech-grid-dark profile-slide-section" id="mentor-2">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+          <span class="section-tag orange">MENTORS • SLIDE 02 / 03</span>
+          <h2 class="section-title">Design & Innovation Leadership</h2>
+        </div>
+
+        <div class="profile-slide-card mentor-slide-card">
+          <div class="profile-card-grid">
+            <div class="profile-photo-container">
+              <div class="profile-photo-frame mentor-photo-frame">
+                <img src="assets/mentors/er-gajendran-parthasarathi.png" alt="Er Gajendran Parthasarathi" class="profile-photo-img" />
+              </div>
+              <div class="profile-photo-tag mentor-photo-tag">
+                <span class="tech-label-dot orange"></span> PROJECT MENTOR 02 / 03
+              </div>
+            </div>
+
+            <div class="profile-content-container">
+              <span class="profile-category-pill mentor-category-pill">PROJECT MENTOR</span>
+              <h3 class="profile-name">Er Gajendran Parthasarathi</h3>
+              <div class="profile-role-title mentor-role-title">Head – School of Design &amp; Innovation</div>
+              <div class="profile-institution">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Rathinam Technical Campus, Coimbatore
+              </div>
+
+              <div class="profile-divider mentor-divider"></div>
+
+              <div class="profile-meta-row">
+                <span class="profile-meta-badge mentor-meta-badge">Industrial Design</span>
+                <span class="profile-meta-badge mentor-meta-badge">Design Thinking &amp; Prototyping</span>
+                <span class="profile-meta-badge mentor-meta-badge">Engineering Innovation</span>
+              </div>
+
+              <div class="profile-nav-bar">
+                <a href="#mentor-1" class="btn btn-secondary btn-sm">← Previous Mentor</a>
+                <div class="profile-dots-track">
+                  <a href="#mentor-1" class="profile-dot-pill"></a>
+                  <span class="profile-dot-pill mentor-active"></span>
+                  <a href="#mentor-3" class="profile-dot-pill"></a>
+                </div>
+                <a href="#mentor-3" class="btn btn-orange btn-sm">Next Mentor →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 20 (MENTOR 3): Rajesh Mohan -->
+    <section class="section section-dark tech-grid-dark profile-slide-section" id="mentor-3">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+          <span class="section-tag orange">MENTORS • SLIDE 03 / 03</span>
+          <h2 class="section-title">Mechanical Engineering Mentorship</h2>
+        </div>
+
+        <div class="profile-slide-card mentor-slide-card">
+          <div class="profile-card-grid">
+            <div class="profile-photo-container">
+              <div class="profile-photo-frame mentor-photo-frame">
+                <img src="assets/mentors/rajesh-mohan.png" alt="Rajesh Mohan" class="profile-photo-img" />
+              </div>
+              <div class="profile-photo-tag mentor-photo-tag">
+                <span class="tech-label-dot orange"></span> PROJECT MENTOR 03 / 03
+              </div>
+            </div>
+
+            <div class="profile-content-container">
+              <span class="profile-category-pill mentor-category-pill">PROJECT MENTOR</span>
+              <h3 class="profile-name">Rajesh Mohan</h3>
+              <div class="profile-role-title mentor-role-title">Assistant Professor – Mechanical Engineering</div>
+              <div class="profile-institution">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Rathinam Technical Campus, Coimbatore
+              </div>
+
+              <div class="profile-divider mentor-divider"></div>
+
+              <div class="profile-meta-row">
+                <span class="profile-meta-badge mentor-meta-badge">Mechanical Systems</span>
+                <span class="profile-meta-badge mentor-meta-badge">Fluid Mechanics &amp; Pumps</span>
+                <span class="profile-meta-badge mentor-meta-badge">Academic &amp; Research Guidance</span>
+              </div>
+
+              <div class="profile-nav-bar">
+                <a href="#mentor-2" class="btn btn-secondary btn-sm">← Previous Mentor</a>
+                <div class="profile-dots-track">
+                  <a href="#mentor-1" class="profile-dot-pill"></a>
+                  <a href="#mentor-2" class="profile-dot-pill"></a>
+                  <span class="profile-dot-pill mentor-active"></span>
+                </div>
+                <a href="#hero" class="btn btn-primary btn-sm">Return to Start ↑</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-link" style="margin-bottom: 0.75rem;">
+            <div class="brand-text">
+              <span class="brand-title">Mother-Daughter Desludging</span>
+              <span class="brand-sub">Self-Fluidizing System</span>
+            </div>
+          </div>
+          <p style="font-size: 0.8125rem; line-height: 1.5; color: #94A3B8;">
+            Student innovation project addressing the sanitation access challenge in steep, narrow, unsewered communities. Engineered for worker protection and ecological preservation.
+          </p>
+          <div style="margin-top: 0.75rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-safety-orange-bright);">
+            “Reaching Every Pit. Protecting Every Worker.”
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>3D Visualizations</h4>
+          <ul class="footer-links">
+            <li><a href="#system-overview">Mother-Daughter 3D Overview</a></li>
+            <li><a href="#pump-technology">Progressive Cavity Pump Cutaway</a></li>
+            <li><a href="#innovations">Self-Fluidizing Intake 3D</a></li>
+            <li><a href="#innovations">Intelligent Pump Control 3D</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Engineering Details</h4>
+          <ul class="footer-links">
+            <li><a href="#architecture">Closed System Flow</a></li>
+            <li><a href="#specifications">Specifications Table</a></li>
+            <li><a href="#safety">Two-Level Alarm System</a></li>
+            <li><a href="#economics">Sensitivity Calculator</a></li>
+            <li><a href="#team-members" style="color: #38BDF8;">Team Members (6 Slides)</a></li>
+            <li><a href="#mentors" style="color: #FB923C;">Mentors (3 Slides)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Research Notice</h4>
+          <p style="font-size: 0.8125rem; line-height: 1.5; color: #64748B;">
+            Concept proposal for technical jury review. No vacuum pump is used. The daughter unit uses a proposed progressive cavity positive-displacement pump.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Student Sanitation Engineering Innovation Group.</div>
+        <div>Proposed Concept Arrangement • Prepared for Technical Jury Review</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Dialog -->
+  <div class="modal-overlay" id="generic-modal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="badge badge-estimate" id="modal-badge">Technical Details</span>
+        <h3 id="modal-title" style="margin: 0.5rem 0 0.25rem 0;">Component Inspection</h3>
+        <div id="modal-subtitle" style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--color-teal-dark);">
+          Subsystem Parameter
+        </div>
+      </div>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>
